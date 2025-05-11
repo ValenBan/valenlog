@@ -1,0 +1,72 @@
+## Ignore the build output
+/bin/
+/obj/
+
+/out/
+
+## Ignore user-specific files
+.vs/
+.vscode/
+.idea/
+
+# User-specific files for Visual Studio
+*.user
+*.userosscache
+*.suo
+*.userprefs
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows Installer configuration files
+*.config
+
+# ASP.NET Core
+project.lock.json
+project.fragment.lock.json
+
+# .NET Core
+*.dbmdl
+*.bak
+
+# Ignore macOS files
+.DS_Store
+
+# Ignore npm
+node_modules/
+
+# Ignore log files
+*.log
+
+# Ignore package and config files
+*.vspscc
+*.vssscc
+
+# Ignore directories for the .NET Core runtime and SDK
+/.dotnet/
+/.nuget/
+
+# Ignore build results
+*/bin/
+/*/obj/
+
+# Ignore Visual Studio for Mac config files
+.idea/
+
+# Ignore .NET core generated files
+generated/
+
+# Ignore published files
+/wwwroot/
+
+# Ignore local .settings files
+.settings/
+
+# Ignore JetBrains Rider config
+.idea/
+
+# Ignore other system files
+Thumbs.db

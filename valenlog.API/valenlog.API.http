@@ -1,0 +1,6 @@
+@valenlog.API_HostAddress = http://localhost:5167
+
+GET {{valenlog.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
