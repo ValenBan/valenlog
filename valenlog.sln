@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "valenlog.API", "valenlog.AP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "valenlog.Application", "valenlog.Application\valenlog.Application.csproj", "{C4CF3054-2182-48AB-A2BC-4812D0D92DAC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "valenlog.Infraestructure", "valenlog.Infraestructure\valenlog.Infraestructure.csproj", "{6C382684-EE9E-4730-A34C-2FBA77246F76}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "valenlog.Infrastructure", "valenlog.Infraestructure\valenlog.Infrastructure.csproj", "{6C382684-EE9E-4730-A34C-2FBA77246F76}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "valenlog.Domain", "valenlog.Domain\valenlog.Domain.csproj", "{053B1C5B-1A4C-4BA5-A7CB-4C07A1701B9D}"
 EndProject

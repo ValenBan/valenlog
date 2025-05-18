@@ -8,7 +8,13 @@
 
   <ItemGroup>
     <ProjectReference Include="..\valenlog.Domain\valenlog.Domain.csproj" />
-    <ProjectReference Include="..\valenlog.Infraestructure\valenlog.Infraestructure.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="11.1.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.1.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.5" />
+  </ItemGroup>
+
 
 </Project>
