@@ -16,9 +16,5 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.5" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="UCs\Blogs\Commands\" />
-  </ItemGroup>
-
 
 </Project>

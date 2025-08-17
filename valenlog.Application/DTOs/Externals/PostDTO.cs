@@ -3,19 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System;
+using System.Collections.Generic;
 namespace valenlog.Application.DTOs.Externals
 {
-    using System;
-    using System.Collections.Generic;
 
-    public sealed record PostHeaderDTO(
+    public sealed record PostDTO(
         string id,
         string title,
         string url,
         DateTime publishedAt,
-        IReadOnlyList<tag> tags
+        IReadOnlyList<tag> tags,
+        content content
     );
 
-    public sealed record tag(string name);
+    public sealed record content(string html);
 }
+

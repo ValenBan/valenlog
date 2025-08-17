@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace valenlog.Application.DTOs.Output
 {
     public sealed record PostHeadersOutputDTO(
-        string cuid,
+        string id,
         string title,
         string url,
         DateTime publishedAt,

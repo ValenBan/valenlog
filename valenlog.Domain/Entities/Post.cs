@@ -13,7 +13,7 @@ namespace valenlog.Domain.Entities
     {
         [Key] 
         [DatabaseGenerated(DatabaseGeneratedOption.None)] 
-        public string cuid { get; set; }
+        public string id { get; set; }
         public string title { get; set; }
 
         public int totalReactions { get; set; }
