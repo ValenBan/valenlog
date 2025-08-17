@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "valenlog.API", "valenlog.API\valenlog.API.csproj", "{AC4EE043-7A49-46EE-9946-25FEA71FF7F5}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "valenlog.Application", "valenlog.Application\valenlog.Application.csproj", "{C4CF3054-2182-48AB-A2BC-4812D0D92DAC}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "valenlog.Infrastructure", "valenlog.Infraestructure\valenlog.Infrastructure.csproj", "{6C382684-EE9E-4730-A34C-2FBA77246F76}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "valenlog.Domain", "valenlog.Domain\valenlog.Domain.csproj", "{053B1C5B-1A4C-4BA5-A7CB-4C07A1701B9D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "valenlog.API", "valenlog.API\valenlog.API.csproj", "{3625F1DB-E2EB-5355-B43A-20B7382E5DDF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "valenlog.Application", "valenlog.Application\valenlog.Application.csproj", "{DEFA7C13-77E2-7EB6-9F3F-0CE6DB47B306}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "valenlog.Domain", "valenlog.Domain\valenlog.Domain.csproj", "{C7CF5AD4-CA52-FA3F-DC37-9BD4B4C9EE31}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,22 +17,22 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{AC4EE043-7A49-46EE-9946-25FEA71FF7F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AC4EE043-7A49-46EE-9946-25FEA71FF7F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AC4EE043-7A49-46EE-9946-25FEA71FF7F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AC4EE043-7A49-46EE-9946-25FEA71FF7F5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C4CF3054-2182-48AB-A2BC-4812D0D92DAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C4CF3054-2182-48AB-A2BC-4812D0D92DAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C4CF3054-2182-48AB-A2BC-4812D0D92DAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C4CF3054-2182-48AB-A2BC-4812D0D92DAC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6C382684-EE9E-4730-A34C-2FBA77246F76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6C382684-EE9E-4730-A34C-2FBA77246F76}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6C382684-EE9E-4730-A34C-2FBA77246F76}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C382684-EE9E-4730-A34C-2FBA77246F76}.Release|Any CPU.Build.0 = Release|Any CPU
-		{053B1C5B-1A4C-4BA5-A7CB-4C07A1701B9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{053B1C5B-1A4C-4BA5-A7CB-4C07A1701B9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{053B1C5B-1A4C-4BA5-A7CB-4C07A1701B9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{053B1C5B-1A4C-4BA5-A7CB-4C07A1701B9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3625F1DB-E2EB-5355-B43A-20B7382E5DDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3625F1DB-E2EB-5355-B43A-20B7382E5DDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3625F1DB-E2EB-5355-B43A-20B7382E5DDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3625F1DB-E2EB-5355-B43A-20B7382E5DDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEFA7C13-77E2-7EB6-9F3F-0CE6DB47B306}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEFA7C13-77E2-7EB6-9F3F-0CE6DB47B306}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEFA7C13-77E2-7EB6-9F3F-0CE6DB47B306}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEFA7C13-77E2-7EB6-9F3F-0CE6DB47B306}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7CF5AD4-CA52-FA3F-DC37-9BD4B4C9EE31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7CF5AD4-CA52-FA3F-DC37-9BD4B4C9EE31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7CF5AD4-CA52-FA3F-DC37-9BD4B4C9EE31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7CF5AD4-CA52-FA3F-DC37-9BD4B4C9EE31}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

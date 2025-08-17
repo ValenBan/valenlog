@@ -12,7 +12,10 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddInfrastructure();
 builder.Services.AddUseCases();
-
+builder.Services.AddHttpClient("HashNode", client =>
+{
+    client.BaseAddress = new Uri("https://api.hashnode.com/");
+});
 var app = builder.Build();
 app.UseMiddleware<ExceptionHandlingMiddleware>();
 // Configure the HTTP request pipeline.
