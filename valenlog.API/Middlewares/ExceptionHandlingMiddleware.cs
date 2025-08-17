@@ -20,12 +20,11 @@ public class ExceptionHandlingMiddleware
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, "Excepción atrapada por middleware");
 
             context.Response.ContentType = "application/json";
             context.Response.StatusCode = StatusCodes.Status500InternalServerError;
-
-            var response = ApiResponse<object>.Fail("Ocurrió un error inesperado en el servidor");
+            
+            var response = ApiResponse<object>.Fail(ex.Message);
 
             var result = JsonSerializer.Serialize(response, new JsonSerializerOptions
             {
