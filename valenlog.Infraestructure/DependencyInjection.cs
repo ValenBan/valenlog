@@ -19,7 +19,7 @@ namespace valenlog.Infrastructure
         {
             services.AddDbContext<ValenlogDbContext>(options => options.UseSqlite("Data Source = valenlog.db"));
 
-            services.AddScoped<IBlogRepository, BlogRepository>();
+            services.AddScoped<IBlogRepository, BlogRepository>();        
         }
     }
 }
