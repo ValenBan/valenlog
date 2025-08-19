@@ -5,6 +5,8 @@ using valenlog.Application.Common.Responses;
 using valenlog.Application.DTOs.Externals;
 using valenlog.Application.DTOs.Output;
 using valenlog.Application.UCs.Blogs.Commands.RegisterView;
+using valenlog.Application.UCs.Blogs.Queries.GetHotPosts;
+using valenlog.Application.UCs.Blogs.Queries.GetPostContent;
 using valenlog.Application.UCs.Blogs.Queries.GetPostHeaders;
 using valenlog.Domain.Entities;
 using valenlog.Infrastructure.Data;
@@ -35,5 +37,18 @@ namespace valenlog.API.Controllers
             return Ok(ApiResponse<bool>.Ok(isRegistered));
         }
 
+        [HttpGet("RelevantPosts")]
+        public async Task<IActionResult> GetRelevantPostHeaders()
+        {
+            var posts = await _mediator.Send(new GetRelevantPostHeadersQuery());
+            return Ok(ApiResponse<List<PostHeadersOutputDTO>>.Ok(posts));
+        }
+
+        [HttpGet("PostContent")]
+        public async Task<IActionResult> GetPostContent(string id)
+        {
+            var postContent = await _mediator.Send(new GetPostContentByIDQuery{ ID = id});
+            return Ok(ApiResponse<content>.Ok(postContent));
+        }
     }
 }
