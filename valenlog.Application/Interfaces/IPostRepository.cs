@@ -18,5 +18,7 @@ namespace valenlog.Application.Interfaces
         public Task<List<Post>> GetRelevantPostHeaders();
 
         public Task<content> GetPostConentByIDAsync(string id);
+
+        public Task<bool> existPost(string id);
     }
 }

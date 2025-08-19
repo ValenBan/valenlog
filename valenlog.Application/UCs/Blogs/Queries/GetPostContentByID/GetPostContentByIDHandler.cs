@@ -23,8 +23,7 @@ namespace valenlog.Application.UCs.Blogs.Queries.GetPostContentByID
         {
             PostHeaderDTO postFinded = await _postRepository.GetPostHeaderByIDAsync(request.ID);
 
-            if (postFinded == null)
-                throw new Exception("Post not found");
+            if (!await _postRepository.existPost(request.ID)) throw new Exception("Post not found");
 
             return await _postRepository.GetPostConentByIDAsync(request.ID);
 
