@@ -13,7 +13,10 @@ namespace valenlog.Application.Interfaces
 		public Task<List<PostHeaderDTO>> GetPostHeadersAsync();
         public Task<bool> RegisterViewPostAsync(string id);
         public Task<Post?> GetPostByIDAsync(string id);
-        public Task<PostDTO> GetPostHeaderByIDAsync(string id);
+        public Task<PostHeaderDTO> GetPostHeaderByIDAsync(string id);
         public Task<bool> RegiserPost(Post post);
+        public Task<List<Post>> GetRelevantPostHeaders();
+
+        public Task<content> GetPostConentByIDAsync(string id);
     }
 }

@@ -24,6 +24,14 @@ namespace valenlog.Infrastructure.Repositories
             _httpClientFactory = httpClientFactory;
         }
 
+        public Task<List<Post>> GetRelevantPostHeaders()
+        {
+            return _context.Posts
+                .OrderByDescending(p => p.totalReactions)
+                .Take(5)
+                .ToListAsync();
+        }
+
         public Task<Post?> GetPostByIDAsync(string id)
         {
             return _context.Posts
@@ -31,13 +39,13 @@ namespace valenlog.Infrastructure.Repositories
                 .FirstOrDefaultAsync();
         }
 
-        public async Task<PostDTO> GetPostHeaderByIDAsync(string id)
+        public async Task<PostHeaderDTO> GetPostHeaderByIDAsync(string id)
         {
             var httpClient = _httpClientFactory.CreateClient("HashNode");
             var token = "f36dfbe8-f4da-44bf-a8e5-24dbb4517fd0";
             httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
 
-            var query = Queries.GetPostByID;
+            var query = Queries.GetPostHeaderByID;
 
             var request = new
             {
@@ -45,7 +53,7 @@ namespace valenlog.Infrastructure.Repositories
                 variables = new { id}
             };
 
-            PostDTO? postHeader = null;
+            PostHeaderDTO? postHeader = null;
 
             try
             {
@@ -64,7 +72,7 @@ namespace valenlog.Infrastructure.Repositories
                 if (selectedPost != null)
                 {
                     // Si todo sale bien, deserializamos y llenamos la lista
-                    postHeader = selectedPost.Deserialize<PostDTO>();
+                    postHeader = selectedPost.Deserialize<PostHeaderDTO>();
                 }
             }
             catch (Exception ex)
@@ -135,5 +143,43 @@ namespace valenlog.Infrastructure.Repositories
                 .Where(p => p.id == id)
                 .ExecuteUpdateAsync(p => p.SetProperty(x => x.totalReactions, x => x.totalReactions + 1)) > 0;
         }
+
+        public async Task<content> GetPostConentByIDAsync(string id)
+        {
+            var httpClient = _httpClientFactory.CreateClient("HashNode");
+            var token = "f36dfbe8-f4da-44bf-a8e5-24dbb4517fd0";
+            httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
+
+            var query = Queries.GetPostContentByID;
+
+            var request = new
+            {
+                query,
+                variables = new { id }
+            };
+
+            content? postContent = null;
+
+            var response = await httpClient.PostAsJsonAsync("https://gql.hashnode.com/", request);
+            response.EnsureSuccessStatusCode();
+
+            // 1. Guardamos el JSON crudo en una variable para que lo puedas inspeccionar
+            var jsonResponse = await response.Content.ReadAsStringAsync();
+
+            // Poné un punto de interrupción (breakpoint) en la línea de arriba para ver el contenido de 'jsonResponse'.
+
+            // 2. Intentamos procesar el JSON de forma segura
+            var json = System.Text.Json.Nodes.JsonNode.Parse(jsonResponse);
+            var selectedPost = json["data"]["post"]["content"];
+
+            if (selectedPost != null)
+            {
+                // Si todo sale bien, deserializamos y llenamos la lista
+                postContent = selectedPost.Deserialize<content>();
+            }
+
+            return postContent;
+        }
+            
     }
 }

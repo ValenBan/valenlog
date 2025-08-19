@@ -25,7 +25,7 @@ namespace valenlog.Application.UCs.Blogs.Commands.RegisterView
 
             if (selectedPost == null)
             {
-                PostDTO PostHeader = await _postRepository.GetPostHeaderByIDAsync(request.ID);
+                PostHeaderDTO PostHeader = await _postRepository.GetPostHeaderByIDAsync(request.ID);
 
                 if (PostHeader == null) throw new Exception("Post not found");
 

@@ -26,7 +26,21 @@ namespace valenlog.Infrastructure.GraphQL.Queries
             }
             ";
 
-        public const string GetPostByID = @"
+        public const string GetPostHeaderByID = @"
+            query Post($id: ID!) {
+              post(id: $id) {
+                id
+                title
+                url
+                publishedAt
+                tags{
+                  name
+                }
+              }
+            }
+            ";
+
+        public const string GetPostContentByID = @"
             query Post($id: ID!) {
               post(id: $id) {
                 id
@@ -37,7 +51,7 @@ namespace valenlog.Infrastructure.GraphQL.Queries
                   name
                 }
                 content{
-                  html
+                    html
                 }
               }
             }
