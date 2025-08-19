@@ -180,6 +180,16 @@ namespace valenlog.Infrastructure.Repositories
 
             return postContent;
         }
-            
+
+        public async Task<bool> existPost(string id)
+        {
+            bool result = false;
+            PostHeaderDTO postHeader = await GetPostHeaderByIDAsync(id);
+            if (postHeader != null)
+            {
+                return result = true;
+            }
+            return result;
+        }
     }
 }
