@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MediatR;
 using valenlog.Application.DTOs.Externals;
+using valenlog.Application.Exceptions;
 using valenlog.Application.Interfaces;
 using valenlog.Application.UCs.Blogs.Queries.GetPostContent;
 
@@ -23,7 +24,7 @@ namespace valenlog.Application.UCs.Blogs.Queries.GetPostContentByID
         {
             PostHeaderDTO postFinded = await _postRepository.GetPostHeaderByIDAsync(request.ID);
 
-            if (!await _postRepository.existPost(request.ID)) throw new Exception("Post not found");
+            if (!await _postRepository.existPost(request.ID)) throw new PostNotFoundException(request.ID);
 
             return await _postRepository.GetPostConentByIDAsync(request.ID);
 
