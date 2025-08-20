@@ -1,5 +1,7 @@
 ﻿using System.Text.Json;
+using Microsoft.AspNetCore.Http;
 using valenlog.Application.Common.Responses;
+using valenlog.Application.Exceptions;
 
 public class ExceptionHandlingMiddleware
 {
@@ -20,10 +22,12 @@ public class ExceptionHandlingMiddleware
         }
         catch (Exception ex)
         {
+            if (ex is PostNotFoundException)
+                context.Response.StatusCode = StatusCodes.Status404NotFound;
+            else context.Response.StatusCode = StatusCodes.Status500InternalServerError;
 
             context.Response.ContentType = "application/json";
-            context.Response.StatusCode = StatusCodes.Status500InternalServerError;
-            
+           
             var response = ApiResponse<object>.Fail(ex.Message);
 
             var result = JsonSerializer.Serialize(response, new JsonSerializerOptions
